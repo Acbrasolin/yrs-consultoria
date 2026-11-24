@@ -76,6 +76,14 @@ header.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .logo-svg {
@@ -93,6 +101,7 @@ header.scrolled {
     display: flex; 
     flex-direction: column; 
     align-items: center;
+    white-space: nowrap;
 }
 
 .logo-text span {
@@ -104,15 +113,17 @@ header.scrolled {
 
 .nav-links { 
     display: flex; 
-    gap: 20px; /* Reduzi um pouco o gap para caber o novo link */
+    gap: 15px; 
+    margin: 0 20px; 
 }
 
 .nav-links a {
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.8rem; 
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     position: relative;
+    white-space: nowrap; 
 }
 
 .nav-links a::after {
@@ -133,12 +144,14 @@ header.scrolled {
 .btn-header {
     background-color: var(--verde-principal);
     color: var(--branco);
-    padding: 10px 24px;
+    padding: 10px 20px; 
     border-radius: 30px;
-    font-size: 0.9rem; 
+    font-size: 0.8rem; 
     font-weight: 500;
     border: 1px solid var(--verde-principal);
     transition: var(--transicao);
+    white-space: nowrap; 
+    flex-shrink: 0;
 }
 
 .btn-header:hover {
@@ -272,11 +285,118 @@ header.scrolled {
 }
 
 /* =========================================
-   SEÇÃO PARCEIRO DE CONFIANÇA (NOVA)
+   SEÇÃO: A ESPECIALISTA (FUNDO VERDE ESCURO)
+   ========================================= */
+.especialista {
+    padding: 100px 0;
+    background-color: var(--verde-escuro); /* Fundo verde escuro para destaque */
+    color: var(--branco);
+}
+
+.especialista-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.especialista-imagem {
+    position: relative;
+}
+
+.especialista-imagem img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: -20px 20px 0px var(--verde-claro); /* Moldura verde clara */
+    object-fit: cover;
+    aspect-ratio: 3 / 4; 
+}
+
+.tag-especialista {
+    color: var(--verde-claro); /* Tag em verde claro */
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.especialista-texto h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--branco); /* Nome em branco */
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.especialista-cargo {
+    font-family: var(--fonte-corpo);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--verde-claro); /* Cargo em verde claro */
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.especialista-texto p {
+    color: var(--bege-escuro); /* Texto em bege claro */
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.especialista-destaques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.destaque-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo branco translúcido */
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(181, 201, 165, 0.3);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--branco);
+}
+
+.destaque-item i {
+    color: var(--verde-claro);
+}
+
+.btn-especialista {
+    display: inline-block;
+    background-color: var(--verde-principal); /* Botão verde principal */
+    color: var(--branco);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: var(--transicao);
+    border: 2px solid var(--verde-principal);
+    margin-top: 10px;
+}
+
+.btn-especialista:hover {
+    background-color: transparent;
+    color: var(--verde-claro);
+    border-color: var(--verde-claro);
+}
+
+/* =========================================
+   SEÇÃO PARCEIRO DE CONFIANÇA
    ========================================= */
 .parceiro {
     padding: 100px 0;
-    background-color: var(--bege-fundo); /* Fundo creme para variar o ritmo visual */
+    background-color: var(--bege-fundo); /* Fundo creme para variar o ritmo */
 }
 
 .parceiro-grid {
@@ -290,7 +410,7 @@ header.scrolled {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--branco); /* Fundo branco destaca a logo */
+    background-color: var(--branco); 
     padding: 40px;
     border-radius: 20px;
     border: 1px solid rgba(181, 201, 165, 0.3);
@@ -945,9 +1065,11 @@ footer p {
    ========================================= */
 @media (max-width: 992px) {
     .hero h1 { font-size: 2.8rem; }
-    .sobre-grid, .contato-grid, .parceiro-grid { grid-template-columns: 1fr; }
+    .sobre-grid, .contato-grid, .parceiro-grid, .especialista-grid { grid-template-columns: 1fr; }
+    
     .sobre-imagem { order: -1; margin-bottom: 30px; }
     .parceiro-logo { order: -1; margin-bottom: 30px; padding: 20px; }
+    
     .cards-container, .cards-planos { grid-template-columns: 1fr; gap: 20px; }
     .card, .card-plano { padding: 30px 20px; }
     
@@ -958,6 +1080,18 @@ footer p {
     .contato-imagem img { box-shadow: 10px 10px 0px var(--verde-claro); }
     
     .parceiro-texto h2 { font-size: 2rem; }
+
+    /* Ajuste da Especialista no Mobile */
+    .especialista-imagem { 
+        order: -1; 
+        margin-bottom: 30px; 
+        max-width: 400px; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+    .especialista-texto h2 { 
+        font-size: 2.2rem; 
+    }
 }
 
 @media (max-width: 768px) {
@@ -992,7 +1126,8 @@ footer p {
     .section-title-operadoras h2,
     .section-title-faq h2,
     .section-title-planos h2,
-    .parceiro-texto h2 { font-size: 2rem; }
+    .parceiro-texto h2,
+    .especialista-texto h2 { font-size: 2rem; }
     
     .faq-question { font-size: 0.95rem; padding: 18px 20px; }
     .faq-answer p { padding: 0 20px; }
@@ -1002,7 +1137,8 @@ footer p {
     .social-btn { width: 45px; height: 45px; font-size: 1rem; }
 
     .sobre-texto p, 
-    .parceiro-texto p { 
+    .parceiro-texto p,
+    .especialista-texto p { 
         text-align: left; 
         font-size: 0.95rem; 
         word-break: break-word; 
