@@ -104,7 +104,7 @@ header.scrolled {
 
 .nav-links { 
     display: flex; 
-    gap: 30px; 
+    gap: 20px; /* Reduzi um pouco o gap para caber o novo link */
 }
 
 .nav-links a {
@@ -269,6 +269,86 @@ header.scrolled {
     text-transform: uppercase; 
     font-weight: 600; 
     color: var(--verde-escuro); 
+}
+
+/* =========================================
+   SEÇÃO PARCEIRO DE CONFIANÇA (NOVA)
+   ========================================= */
+.parceiro {
+    padding: 100px 0;
+    background-color: var(--bege-fundo); /* Fundo creme para variar o ritmo visual */
+}
+
+.parceiro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.parceiro-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--branco); /* Fundo branco destaca a logo */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(181, 201, 165, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.parceiro-logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.tag-parceiro {
+    color: var(--verde-principal);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.parceiro-texto h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--verde-escuro);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.parceiro-texto p {
+    color: var(--texto-corpo);
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.btn-parceiro {
+    display: inline-block;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: var(--transicao);
+    border: 2px solid var(--verde-escuro);
+    margin-top: 10px;
+}
+
+.btn-parceiro:hover {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-principal);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(107, 142, 78, 0.2);
 }
 
 /* =========================================
@@ -665,7 +745,6 @@ header.scrolled {
     background-color: var(--branco);
 }
 
-/* CORREÇÃO: Aumentamos o max-height para o texto não cortar no mobile */
 .faq-item.active .faq-answer {
     max-height: 1000px; 
     padding-bottom: 20px;
@@ -866,8 +945,9 @@ footer p {
    ========================================= */
 @media (max-width: 992px) {
     .hero h1 { font-size: 2.8rem; }
-    .sobre-grid, .contato-grid { grid-template-columns: 1fr; }
+    .sobre-grid, .contato-grid, .parceiro-grid { grid-template-columns: 1fr; }
     .sobre-imagem { order: -1; margin-bottom: 30px; }
+    .parceiro-logo { order: -1; margin-bottom: 30px; padding: 20px; }
     .cards-container, .cards-planos { grid-template-columns: 1fr; gap: 20px; }
     .card, .card-plano { padding: 30px 20px; }
     
@@ -876,6 +956,8 @@ footer p {
 
     .contato-imagem { margin-top: 30px; }
     .contato-imagem img { box-shadow: 10px 10px 0px var(--verde-claro); }
+    
+    .parceiro-texto h2 { font-size: 2rem; }
 }
 
 @media (max-width: 768px) {
@@ -907,9 +989,10 @@ footer p {
     .logo-item { width: calc(50% - 10px); min-width: 120px; height: 80px; padding: 10px; }
     .logo-item::after { display: none; }
     
-    .section-title-operadoras h2 { font-size: 2rem; }
-    .section-title-faq h2 { font-size: 2rem; }
-    .section-title-planos h2 { font-size: 2rem; }
+    .section-title-operadoras h2,
+    .section-title-faq h2,
+    .section-title-planos h2,
+    .parceiro-texto h2 { font-size: 2rem; }
     
     .faq-question { font-size: 0.95rem; padding: 18px 20px; }
     .faq-answer p { padding: 0 20px; }
@@ -918,10 +1001,10 @@ footer p {
     .social-toggle { width: 50px; height: 50px; font-size: 1.2rem; }
     .social-btn { width: 45px; height: 45px; font-size: 1rem; }
 
-    /* CORREÇÃO: Ajuste do texto do Sobre no Mobile */
-    .sobre-texto p { 
-        text-align: left; /* Alinha à esquerda para evitar sobreposição */
-        font-size: 0.95rem; /* Diminui um pouco a fonte */
-        word-break: break-word; /* Garante que palavras longas quebrem a linha */
+    .sobre-texto p, 
+    .parceiro-texto p { 
+        text-align: left; 
+        font-size: 0.95rem; 
+        word-break: break-word; 
     }
 }
