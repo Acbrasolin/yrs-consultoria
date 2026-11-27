@@ -285,11 +285,11 @@ header.scrolled {
 }
 
 /* =========================================
-   SEÇÃO: A ESPECIALISTA (FUNDO VERDE ESCURO)
+   SEÇÃO: A ESPECIALISTA
    ========================================= */
 .especialista {
     padding: 100px 0;
-    background-color: var(--verde-escuro); /* Fundo verde escuro para destaque */
+    background-color: var(--verde-escuro); 
     color: var(--branco);
 }
 
@@ -307,13 +307,13 @@ header.scrolled {
 .especialista-imagem img {
     width: 100%;
     border-radius: 20px;
-    box-shadow: -20px 20px 0px var(--verde-claro); /* Moldura verde clara */
+    box-shadow: -20px 20px 0px var(--verde-claro); 
     object-fit: cover;
     aspect-ratio: 3 / 4; 
 }
 
 .tag-especialista {
-    color: var(--verde-claro); /* Tag em verde claro */
+    color: var(--verde-claro); 
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 3px;
@@ -326,7 +326,7 @@ header.scrolled {
     font-family: var(--fonte-titulo);
     font-size: 3rem;
     font-weight: 400;
-    color: var(--branco); /* Nome em branco */
+    color: var(--branco); 
     margin-bottom: 5px;
     line-height: 1.1;
 }
@@ -335,13 +335,13 @@ header.scrolled {
     font-family: var(--fonte-corpo);
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--verde-claro); /* Cargo em verde claro */
+    color: var(--verde-claro); 
     margin-bottom: 25px;
     letter-spacing: 1px;
 }
 
 .especialista-texto p {
-    color: var(--bege-escuro); /* Texto em bege claro */
+    color: var(--bege-escuro); 
     font-size: 1.05rem;
     margin-bottom: 20px;
     text-align: justify;
@@ -358,7 +358,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo branco translúcido */
+    background-color: rgba(255, 255, 255, 0.1); 
     padding: 8px 16px;
     border-radius: 50px;
     border: 1px solid rgba(181, 201, 165, 0.3);
@@ -373,7 +373,7 @@ header.scrolled {
 
 .btn-especialista {
     display: inline-block;
-    background-color: var(--verde-principal); /* Botão verde principal */
+    background-color: var(--verde-principal); 
     color: var(--branco);
     padding: 14px 32px;
     border-radius: 50px;
@@ -396,7 +396,7 @@ header.scrolled {
    ========================================= */
 .parceiro {
     padding: 100px 0;
-    background-color: var(--bege-fundo); /* Fundo creme para variar o ritmo */
+    background-color: var(--bege-fundo); 
 }
 
 .parceiro-grid {
@@ -767,6 +767,150 @@ header.scrolled {
 }
 
 /* =========================================
+   SEÇÃO: AVALIAÇÕES DE CLIENTES
+   ========================================= */
+.avaliacoes {
+    padding: 100px 0;
+    background-color: var(--bege-fundo); 
+}
+
+.section-title-avaliacoes {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tag-avaliacoes {
+    color: var(--verde-principal); 
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.section-title-avaliacoes h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--verde-escuro);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.section-title-avaliacoes p {
+    color: var(--texto-corpo);
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cards-avaliacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card-avaliacao {
+    background-color: var(--branco);
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(181, 201, 165, 0.4);
+    transition: var(--transicao);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-avaliacao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.avaliacao-header {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.avaliacao-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--branco);
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex-shrink: 0; /* IMPEDE O AVATAR DE ACHATAR */
+    aspect-ratio: 1 / 1; /* GARANTE QUE SEJA UM CÍRCULO PERFEITO */
+}
+
+.bg-avatar-1 { background-color: var(--verde-principal); }
+.bg-avatar-2 { background-color: var(--verde-claro); color: var(--verde-escuro); }
+.bg-avatar-3 { background-color: #3b82f6; } 
+
+.user-info h4 {
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--verde-escuro);
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.user-info span {
+    font-size: 0.75rem;
+    color: var(--cinza-texto);
+    display: block;
+}
+
+.avaliacao-selo {
+    background-color: rgba(181, 201, 165, 0.2);
+    color: var(--verde-escuro);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto; /* Empurra o selo para a direita */
+}
+
+.avaliacao-selo i {
+    color: #4285F4; 
+}
+
+.avaliacao-estrelas {
+    color: #fbbc04; 
+    font-size: 1rem;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 3px;
+}
+
+.avaliacao-texto {
+    font-size: 0.95rem;
+    color: var(--texto-corpo);
+    line-height: 1.6;
+    font-style: italic;
+    flex-grow: 1;
+}
+
+/* =========================================
    SEÇÃO FAQ
    ========================================= */
 .faq {
@@ -1070,8 +1214,8 @@ footer p {
     .sobre-imagem { order: -1; margin-bottom: 30px; }
     .parceiro-logo { order: -1; margin-bottom: 30px; padding: 20px; }
     
-    .cards-container, .cards-planos { grid-template-columns: 1fr; gap: 20px; }
-    .card, .card-plano { padding: 30px 20px; }
+    .cards-container, .cards-planos, .cards-avaliacoes { grid-template-columns: 1fr; gap: 20px; }
+    .card, .card-plano, .card-avaliacao { padding: 30px 20px; }
     
     .logo-item { width: calc(33.33% - 20px); }
     .logo-item:nth-child(3n)::after { display: none; }
@@ -1091,6 +1235,16 @@ footer p {
     }
     .especialista-texto h2 { 
         font-size: 2.2rem; 
+    }
+
+    /* Ajuste das Avaliações no Mobile */
+    .avaliacao-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .avaliacao-selo {
+        margin-left: 0;
+        margin-top: 5px;
     }
 }
 
@@ -1127,7 +1281,8 @@ footer p {
     .section-title-faq h2,
     .section-title-planos h2,
     .parceiro-texto h2,
-    .especialista-texto h2 { font-size: 2rem; }
+    .especialista-texto h2,
+    .section-title-avaliacoes h2 { font-size: 2rem; }
     
     .faq-question { font-size: 0.95rem; padding: 18px 20px; }
     .faq-answer p { padding: 0 20px; }
@@ -1138,7 +1293,8 @@ footer p {
 
     .sobre-texto p, 
     .parceiro-texto p,
-    .especialista-texto p { 
+    .especialista-texto p,
+    .avaliacao-texto { 
         text-align: left; 
         font-size: 0.95rem; 
         word-break: break-word; 
